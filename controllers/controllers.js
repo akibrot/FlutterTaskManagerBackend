@@ -2,7 +2,7 @@ import expressAsyncHandler from "express-async-handler";
 import ProjectModel from "../models/ProjectModel.js";
 //welcome
 export const welcome = expressAsyncHandler((req, res) => {
-  res.send("welcome to task manager server");
+  res.send("welcome to task manager server Route added");
 });
 //
 
