@@ -7,5 +7,5 @@ const Userschema = mongoose.Schema({
   Task: { type: Array },
 });
 
-const Users = mongoose.model("MainUser", Userschema);
-export default Users;
+const UserModel = mongoose.model("MainUser", Userschema);
+export default UserModel;

@@ -1,5 +1,7 @@
 import expressAsyncHandler from "express-async-handler";
 import ProjectModel from "../models/ProjectModel.js";
+import UserModel from "../models/UserModel.js";
+
 //welcome
 export const welcome = expressAsyncHandler((req, res) => {
   res.send("welcome to task manager server Route added");
@@ -58,5 +60,23 @@ export const createTask = expressAsyncHandler(async (req, res) => {
 
   if (findProject) {
     console.log("task pushed");
+  }
+});
+
+//create user controller
+export const createUser = expressAsyncHandler(async (req, res) => {
+  const save = await UserModel.insertMany(req.body);
+
+  if (save) {
+    res.status(200).send("user account created");
+    console.log("saved");
+  }
+});
+
+//getUsers
+export const getUsers = expressAsyncHandler(async (req, res) => {
+  const save = await UserModel.find();
+  if (save) {
+    res.status(200).send(save);
   }
 });
